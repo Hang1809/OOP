@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        function createMatrix(row, col, max, min) {
+            let arr = [];
+            for (let i = 0; i < row; i++) {
+                arr[i] = [];
+                for (let j = 0; j < col; j++) {
+                    arr[i][j] = Math.floor(Math.random() * (max - min + 1) + min);
+                }
+            }
+            return arr;
+        }
+        console.log(createMatrix(5, 6, 10, 60));
+
+    </script>
+
+</body>
+
+</html>

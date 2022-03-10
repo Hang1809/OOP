@@ -11,21 +11,22 @@
     <p type="button" onclick="findPrime()">Bai2</p>
     <script>
         //bai2
-        function findPrime() {
-            let arr;
-            let number;
-            let i = 2;
-            for (i = 2; i < number; i++) {
-                if (number % i == 0) {
-                    return false;
+        function findPrime(arr) {
+           
+            let result= arr.some(function(number) {
+                let flag=true;
+                if(number<2) flag=false;
+                for(let i=2;i<number;i++) {
+                    if(number%i==0) {
+                        flag=false;
+                        break;
+                    }
                 }
-            }
-            if (i = number) {
-                return true;
-            }
+                return flag;
+            })
+            return result;
         }
-        let array = findPrime(1, 2, 5, 7, 8, 11)
-        document.write(`prime : ${number} `)
+        alert(findPrime([1, 12, 15, 9, 8, 14]));
 
     </script>
 </body>
