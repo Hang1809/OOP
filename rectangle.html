@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <canvas id="myCanvas" width="300" height="150" 
+    style="border:1px solid #131212;"></canvas>
+
+    
+    <script>
+        let Rectangle= function (width,height)  {
+            this.width=width;
+            this.height=height;
+
+            this.getArea = () => {
+                document.write(`<br> Dien tich hinh cn la: ${this.width*this.height}`);
+            }
+
+            this.getPerimeter = () => {
+               document.write(`<br> Chu vi hinh cn la: ${(this.width+this.height)*2}`);
+            }
+
+            this.showRectangle = () => {
+                let ctx= document.getElementById('myCanvas').getContext("2d");
+                let x=Math.floor(Math.random()*200);
+                let y=Math.floor(Math.random()*200);
+                ctx.beginPath()
+                ctx.fillRect(x,y,this.width,this.height);
+            }
+        }
+
+        let rectangle= new Rectangle(200,100);
+        rectangle.showRectangle();
+        rectangle.width=400;
+        rectangle.height=200;
+        rectangle.showRectangle();
+        rectangle.getArea();
+        rectangle.getPerimeter();
+    </script>
+</body>
+</html>
