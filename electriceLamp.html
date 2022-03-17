@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<style>
+  .button {
+    background-color: #2AB116
+  }
+</style>
+
+<body>
+    
+     <button class="button" type="button" onclick="turnOn()">ON</button>
+     <button class="button" type="button" onclick="turnOff()">OFF</button>
+   
+</body>
+<script>
+  
+ 
+  let SwitchButton = function () {
+            this.status= false;
+            this.connectToLamp = function (electricLamp) {
+                this.status = true;
+                this.electricLamp = electricLamp;
+            }
+
+            this.switchOff = function () {
+                if(this.status) {
+                this.electricLamp.turnOff(); }
+                else alert("Not connect with the lamp!");
+            }
+
+            this.switchOn = function () {
+                if(this.status)
+                this.electricLamp.turnOn();
+                else alert("Not connect with the lamp!");
+            }
+        }
+
+        let ElectricLamp = function () {
+            this.status = false;
+
+            this.turnOff = function () {
+                if (this.status) {
+                    alert("TURN OFF LIGHT");
+                    this.status = false;
+                } else {
+                    alert("TURN OFF LIGHT")
+                }
+            }
+
+            this.turnOn = function () {
+                if (this.status) {
+                    alert("THE LIGHT IS ON");
+                } else {
+                    alert("THE LIGHT IS ON");
+                    this.status = true;
+                }
+            }
+        }
+
+        const turnOn = () => {
+            switchButton.switchOn();
+        }
+
+        const turnOff = () => {
+            switchButton.switchOff();
+        }
+
+        let switchButton = new SwitchButton ();
+        let electricLamp = new ElectricLamp();
+        switchButton.connectToLamp(electricLamp);
+
+
+
+</script>
+
+</html>
